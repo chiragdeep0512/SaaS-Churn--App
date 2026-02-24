@@ -1,3 +1,5 @@
+streamlit==1.32.2
+altair<5
 pandas
 numpy
 scikit-learn
@@ -5,4 +7,3 @@ xgboost
 joblib
 matplotlib
 seaborn
-streamlit
