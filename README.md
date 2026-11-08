@@ -1,16 +1,34 @@
-# Churn Prediction System
+# SaaS Customer & Churn Analysis
 
-## **Project Overview**
-This project predicts the likelihood of a customer churning (leaving the platform) using historical customer data.  
-It includes a trained **XGBoost model**, a **prediction script**, and a **Streamlit dashboard** for user-friendly predictions.
+Descriptive analysis of a synthetic SaaS dataset (RavenStack): customer segments,
+usage, support and churn events, with data-quality checks and a Streamlit dashboard.
 
-**Key Features:**
-- Train a machine learning model to predict churn probability.
-- Predict churn for new customers automatically.
-- Identify high-risk customers and export predictions.
-- Optionally visualize top features contributing to churn.
-- Streamlit dashboard for uploading data and getting predictions instantly.
+**Live app:** [paste your Streamlit link]
 
----
+## Data
+Five synthetic tables: accounts, subscriptions, feature usage, support tickets
+and churn events: 33,100 records covering 500 accounts.
+Source: [dataset link]. The data is synthetic, so findings illustrate the
+analysis method, not real customer behaviour.
 
-## **Project Structure**
+## What this project does
+- Builds customer-segment, usage, support and churn-event views
+- Checks IDs and dates, and reports exceptions
+- Reconciles row counts across tables
+- Finds 312 conflicts between account churn flags and event history
+- Separates 600 churn events from 352 affected accounts
+  (one account can have more than one churn event)
+
+## Limitations
+- Synthetic data; no real business conclusions
+- This is a descriptive analysis, not a churn prediction model
+- [add 1-2 coverage limits from your own documentation]
+
+## Run locally
+pip install -r requirements.txt
+streamlit run app.py
+
+## Version note
+[Keep only if true] An earlier version trained a churn prediction model on a
+simulated churn label. That was removed because the label was derived from the
+same features, which makes the evaluation circular.
